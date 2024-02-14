@@ -4,26 +4,19 @@ using System.Drawing;                           // System.Drawing contains drawi
 
 public class MyGame : Game {
 
-	public MyGame() : base(1366, 768, false)     // Create a window that's 800x600 and NOT fullscreen
+	public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
-		// Draw some things on a canvas:
-		EasyDraw canvas = new EasyDraw(800, 600);
-		canvas.Clear(Color.MediumPurple);
-		canvas.Fill(Color.Yellow);
-		canvas.Ellipse(width / 2, height / 2, 200, 200);
-		canvas.Fill(50);
-		canvas.TextSize(26);
-		canvas.TextAlign(CenterMode.Center, CenterMode.Center);
-		canvas.Text("Welcome!", width / 2, height / 2);
+		Customer customer = new Customer();
 
-		// Add the canvas to the engine to display it:
-		AddChild(canvas);
+
+		AddChild(customer);
+		customer.SetXY(-200, (height / 2) - 100);
 		Console.WriteLine("MyGame initialized");
 	}
 
 	// For every game object, Update is called every frame, by the engine:
 	void Update() {
-		// Empty
+		
 	}
 
 	static void Main()                          // Main() is the first method that's called when the program is run
