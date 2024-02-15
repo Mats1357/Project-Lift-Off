@@ -2,11 +2,11 @@
 using GXPEngine;
 
 
-public class Customer : Sprite {
+public class EasyCustomer : Sprite {
 
 	float slideSpeed = 2f;
 	
-	public Customer() : base("customer.png")
+	public EasyCustomer() : base("customer.png")
 	{
 
 	}
