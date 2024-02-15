@@ -7,11 +7,22 @@ public class MyGame : Game {
 	public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
 		Customer customer = new Customer();
+		Potion1 potion1 = new Potion1();
+		Potion2 potion2 = new Potion2();
+		Potion3 potion3 = new Potion3();
 
 
 		AddChild(customer);
-		customer.SetXY(-200, (height / 2) - 100);
-		Console.WriteLine("MyGame initialized");
+		AddChild(potion1);
+        AddChild(potion2);
+        AddChild(potion3);
+
+        customer.SetXY(-200, (height / 2) - 100);
+		potion1.SetXY(100, 650);
+        potion2.SetXY(200, 650);
+        potion3.SetXY(300, 650);
+
+        Console.WriteLine("MyGame initialized");
 	}
 
 	// For every game object, Update is called every frame, by the engine:

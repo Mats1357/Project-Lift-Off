@@ -79,5 +79,8 @@
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Potion1.cs" />
+    <Compile Include="Potion2.cs" />
+    <Compile Include="Potion3.cs" />
   </ItemGroup>
 </Project>
