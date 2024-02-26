@@ -82,5 +82,6 @@
     <Compile Include="Potion1.cs" />
     <Compile Include="Potion2.cs" />
     <Compile Include="Potion3.cs" />
+    <Compile Include="Note.cs" />
   </ItemGroup>
 </Project>

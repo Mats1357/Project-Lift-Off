@@ -10,6 +10,7 @@ public class MyGame : Game {
 		Potion1 potion1 = new Potion1();
 		Potion2 potion2 = new Potion2();
 		Potion3 potion3 = new Potion3();
+		Note note = new Note();
 
 
 		AddChild(easy_customer);
@@ -17,10 +18,10 @@ public class MyGame : Game {
         AddChild(potion2);
         AddChild(potion3);
 
-        easy_customer.SetXY(-200, (height / 2) - 100);
-		potion1.SetXY(100, 650);
-        potion2.SetXY(200, 650);
-        potion3.SetXY(300, 650);
+        easy_customer.SetXY(-200, 150);
+		potion1.SetXY(200, 400);
+        potion2.SetXY(300, 400);
+        potion3.SetXY(400, 400);
 
         Console.WriteLine("MyGame initialized");
 	}
