@@ -15,6 +15,7 @@ public class Potion1 : Sprite
 		if(Input.GetKeyDown(Key.ONE))
 		{
 			Console.WriteLine("You pressed 1");
+			SetColor(255, 0, 0);
 		}
        
     }

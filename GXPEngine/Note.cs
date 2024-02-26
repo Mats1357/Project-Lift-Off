@@ -1,8 +1,10 @@
 ﻿using GXPEngine;
 using System;
 
-public class Note : Sprite
-{
+public class Note : Sprite { 
+
+    float slideSpeed = 2f;
+
     public Note() : base("note.png")
     {
 
@@ -12,8 +14,15 @@ public class Note : Sprite
     void Update()
     {
 
-        
+        x = x + slideSpeed;
 
+        /*
+        if (HitTest(other:)
+        {
+            if (Input.GetKeyDown(Key.ONE))
+            Destroy();
+        }
+        */
     }
 
 
