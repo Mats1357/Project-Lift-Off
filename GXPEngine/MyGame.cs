@@ -8,8 +8,9 @@ public class MyGame : Game {
 	{
 		EasyCustomer easy_customer = new EasyCustomer();
         NoteP1 noteP1 = new NoteP1();
+		NoteP2 noteP2 = new NoteP2();
         Potion1 potion1 = new Potion1(noteP1);
-		Potion2 potion2 = new Potion2();
+		Potion2 potion2 = new Potion2(noteP2);
 		Potion3 potion3 = new Potion3();
 		
 
@@ -19,12 +20,14 @@ public class MyGame : Game {
         AddChild(potion2);
         AddChild(potion3);
 		AddChild(noteP1);
+		AddChild(noteP2);
 
         easy_customer.SetXY(-200, 150);
 		potion1.SetXY(200, 400);
         potion2.SetXY(300, 400);
         potion3.SetXY(400, 400);
-		noteP1.SetXY(-50, 500);
+		noteP1.SetXY(-50, 475);
+		noteP2.SetXY(-50, 525);
 
         Console.WriteLine("MyGame initialized");
 	}
@@ -34,8 +37,8 @@ public class MyGame : Game {
 		
 	}
 
-	static void Main()                          // Main() is the first method that's called when the program is run
-	{
-		new MyGame().Start();                   // Create a "MyGame" and start it
-	}
+    static void Main()                          // Main() is the first method that's called when the program is run
+    {
+        new MyGame().Start();                   // Create a "MyGame" and start it
+    }
 }
