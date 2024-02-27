@@ -7,23 +7,24 @@ public class MyGame : Game {
 	public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
 		EasyCustomer easy_customer = new EasyCustomer();
-		Potion1 potion1 = new Potion1();
+        NoteP1 noteP1 = new NoteP1();
+        Potion1 potion1 = new Potion1(noteP1);
 		Potion2 potion2 = new Potion2();
 		Potion3 potion3 = new Potion3();
-		Note note1 = new Note();
+		
 
 
 		AddChild(easy_customer);
 		AddChild(potion1);
         AddChild(potion2);
         AddChild(potion3);
-		AddChild(note1);
+		AddChild(noteP1);
 
         easy_customer.SetXY(-200, 150);
 		potion1.SetXY(200, 400);
         potion2.SetXY(300, 400);
         potion3.SetXY(400, 400);
-		note1.SetXY(-50, 500);
+		noteP1.SetXY(-50, 500);
 
         Console.WriteLine("MyGame initialized");
 	}
