@@ -1,14 +1,15 @@
 ﻿using System;
 using GXPEngine;
 
-public class Potion3 : Sprite
-{
+public class Potion3 : Sprite {
 
     private Note noteP3;
+    MyGame game;
 
-    public Potion3(Note n) : base("three.png")
+    public Potion3(Note n, MyGame g) : base("three.png")
     {
         noteP3 = n;
+        game = g;
 
     }
 
@@ -23,6 +24,11 @@ public class Potion3 : Sprite
             {
                 SetColor(0, 0, 255);
                 noteP3.Delete();
+            }
+
+            else
+            {
+                game.game_over = true;
             }
         }
 

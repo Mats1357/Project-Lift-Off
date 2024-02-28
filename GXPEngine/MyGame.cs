@@ -14,8 +14,8 @@ public class MyGame : Game {
 		Note noteP2 = new Note(1);
 		Note noteP3 = new Note(2);
         Potion1 potion1 = new Potion1(noteP1, this);
-		Potion2 potion2 = new Potion2(noteP2);
-		Potion3 potion3 = new Potion3(noteP3);
+		Potion2 potion2 = new Potion2(noteP2, this);
+		Potion3 potion3 = new Potion3(noteP3, this);
 
 
          gameOver = new GameOver();
@@ -57,12 +57,8 @@ public class MyGame : Game {
                 Console.WriteLine("You want to quit the game!");
                 Destroy();
 
-            }
-
-            
+            } 
         }
-		
-		
 	}
 
     static void Main()                          // Main() is the first method that's called when the program is run

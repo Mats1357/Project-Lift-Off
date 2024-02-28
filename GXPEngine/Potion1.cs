@@ -4,7 +4,6 @@ using GXPEngine;
 public class Potion1 : Sprite {
 
 	private Note noteP1;
-
 	MyGame game;
 
 	public Potion1(Note n, MyGame g) : base("one.png")
