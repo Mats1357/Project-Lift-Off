@@ -29,7 +29,7 @@ public class Potion1 : Sprite {
 
 			else
 			{
-                game.StopGame();
+				game.game_over = true;
             }
 		}
        

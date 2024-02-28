@@ -5,6 +5,7 @@ using System.Drawing;                           // System.Drawing contains drawi
 public class MyGame : Game {
 
 	GameOver gameOver;
+	public bool game_over = false;
 
     public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
@@ -40,23 +41,27 @@ public class MyGame : Game {
 
 	// For every game object, Update is called every frame, by the engine:
 	void Update() {
+
+		StopGame();
 		
 	}
 
 	public void StopGame()
 	{
-		AddChild(gameOver);
-
-		while (true)
+		if (game_over == true)
 		{
+            AddChild(gameOver);
+
             if (Input.GetKeyDown(Key.FOUR))
             {
                 Console.WriteLine("You want to quit the game!");
                 Destroy();
-				break;
+
             }
 
+            
         }
+		
 		
 	}
 
