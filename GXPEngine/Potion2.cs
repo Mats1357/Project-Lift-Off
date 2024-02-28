@@ -3,9 +3,9 @@ using GXPEngine;
 
 public class Potion2 : Sprite {
 
-    private NoteP2 noteP2;
+    private Note noteP2;
 
-    public Potion2(NoteP2 n) : base("two.png")
+    public Potion2(Note n) : base("two.png")
     {
         noteP2 = n;
 

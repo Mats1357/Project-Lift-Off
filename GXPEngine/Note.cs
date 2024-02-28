@@ -1,15 +1,15 @@
 ﻿using GXPEngine;
 using System;
 
-public class NoteP1 : Sprite { 
+public class Note : Sprite {
 
-    float slideSpeed = 2f;
+    float slideSpeed;
 
     public String text = "test";
 
-    public NoteP1() : base("note.png")
+    public Note(float slide_speed) : base("note.png")
     {
-
+        slideSpeed = slide_speed;
 
     }
 

@@ -3,9 +3,12 @@ using GXPEngine;
 
 public class Potion3 : Sprite
 {
-    public Potion3() : base("three.png")
-    {
 
+    private Note noteP3;
+
+    public Potion3(Note n) : base("three.png")
+    {
+        noteP3 = n;
 
     }
 
@@ -15,6 +18,12 @@ public class Potion3 : Sprite
         if (Input.GetKeyDown(Key.THREE))
         {
             Console.WriteLine("You pressed 3");
+
+            if (HitTest(noteP3))
+            {
+                SetColor(0, 0, 255);
+                noteP3.Delete();
+            }
         }
 
     }
