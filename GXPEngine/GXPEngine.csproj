@@ -83,5 +83,7 @@
     <Compile Include="Potion2.cs" />
     <Compile Include="Potion3.cs" />
     <Compile Include="Note.cs" />
+    <Compile Include="ScoreSystem.cs" />
+    <Compile Include="GameOver.cs" />
   </ItemGroup>
 </Project>

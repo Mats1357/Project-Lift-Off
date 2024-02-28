@@ -4,19 +4,22 @@ using System.Drawing;                           // System.Drawing contains drawi
 
 public class MyGame : Game {
 
-	public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
+	GameOver gameOver;
+
+    public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
 		EasyCustomer easy_customer = new EasyCustomer();
         Note noteP1 = new Note(2);
 		Note noteP2 = new Note(1);
 		Note noteP3 = new Note(2);
-        Potion1 potion1 = new Potion1(noteP1);
+        Potion1 potion1 = new Potion1(noteP1, this);
 		Potion2 potion2 = new Potion2(noteP2);
 		Potion3 potion3 = new Potion3(noteP3);
-		
 
 
-		AddChild(easy_customer);
+         gameOver = new GameOver();
+
+        AddChild(easy_customer);
 		AddChild(potion1);
         AddChild(potion2);
         AddChild(potion3);
@@ -37,6 +40,23 @@ public class MyGame : Game {
 
 	// For every game object, Update is called every frame, by the engine:
 	void Update() {
+		
+	}
+
+	public void StopGame()
+	{
+		AddChild(gameOver);
+
+		while (true)
+		{
+            if (Input.GetKeyDown(Key.FOUR))
+            {
+                Console.WriteLine("You want to quit the game!");
+                Destroy();
+				break;
+            }
+
+        }
 		
 	}
 
