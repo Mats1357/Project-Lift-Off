@@ -10,6 +10,8 @@ public class EasyCustomer : AnimationSprite {
 	float slideSpeed = 2f;
 	float slideSpeedNote;
 
+	public bool started = false;
+
 	public bool P1Done = false;
     public bool P2Done = false;
     public bool P3Done = false;
@@ -29,31 +31,36 @@ public class EasyCustomer : AnimationSprite {
 	{
 		if (!orderDone)
 		{
-            if (x >= 583)
-            {
-                if (!isDone)
+			if (started == true)
+			{
+                if (x >= 583)
                 {
-                    game.EasyCNotes(slideSpeedNote, this);
-                    isDone = true;
+                    if (!isDone)
+                    {
+                        game.EasyCNotes(slideSpeedNote, this);
+                        isDone = true;
+                    }
+
+                    if (P1Done && P2Done && P3Done)
+                    {
+                        orderDone = true;
+
+
+
+                        SetFrame(1);
+
+                    }
                 }
 
-                if (P1Done && P2Done && P3Done)
+                else
                 {
-                    orderDone = true;
 
-                    SetFrame(1);
-                    
+                    x = x + slideSpeed;
+
+
                 }
             }
-
-            else
-            {
-
-                x = x + slideSpeed;
-
-
-            }
-        }
+        }	
 
 		else
 		{
@@ -65,7 +72,6 @@ public class EasyCustomer : AnimationSprite {
                 this.Destroy();
 
 				game.win = true;
-				game.Win();
             }
         }
 		

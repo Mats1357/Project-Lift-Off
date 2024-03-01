@@ -8,19 +8,30 @@ public class MyGame : Game {
     WinScreen winScreen;
 	public bool game_over = false;
     public bool win = false;
- 
+    EasyCustomer easy_customer;
+    Sprite start_screen;
+    Sound startSound = new Sound("sounds/Intro_Alchemy_game.mp3");
+    Sound music = new Sound("sounds/game_demo_6.mp3", true, true);
+    SoundChannel startMusicChannel;
+
 
 
 
 
     public MyGame() : base(1366, 768, false)     // Create a window that's 1366x768 and NOT fullscreen
 	{
-        EasyCustomer easy_customer = new EasyCustomer(this, 1);
+        start_screen = new Sprite("START_SCREEN_1366x768.jpg");
+        startMusicChannel = startSound.Play();
+        Console.WriteLine(startSound.Play());
+        
+
+        easy_customer = new EasyCustomer(this, 6);
+
 
         //RemoveCustomer remove_customer = new RemoveCustomer(easy_customer);
 
-        
-     
+
+
         //remove_customer.currentCustomer = 1;
         easy_customer.SetXY(-463, 150);
 
@@ -30,8 +41,8 @@ public class MyGame : Game {
         AnimationSprite main_character = new AnimationSprite("Character_Sprites/sprite_sheet_witch.png", 16, 1);
         main_character.SetFrame(4);
 
-		Sound music = new Sound("sounds/game_demo_6.mp3", true, true);
-		music.Play();
+		
+		
 
          gameOver = new GameOver();
         winScreen = new WinScreen();
@@ -41,6 +52,10 @@ public class MyGame : Game {
         AddChild(easy_customer);
 		AddChild(desk);
         AddChild(main_character);
+
+        AddChild(start_screen);
+
+        
 
         main_character.SetXY(800, 200);
 		
@@ -54,7 +69,20 @@ public class MyGame : Game {
 	// For every game object, Update is called every frame, by the engine:
 	void Update() {
 
-		StopGame();
+        if (Input.GetKeyDown(Key.ENTER))
+        {
+            start_screen.Destroy();
+            easy_customer.started = true;
+            startMusicChannel.Stop();
+            music.Play();
+        }
+
+        StopGame();
+
+        if(win == true)
+        {
+            Win();
+        }
 		
 	}
 
@@ -134,17 +162,18 @@ public class MyGame : Game {
 
     public void Win()
     {
-        if (win == true)
-        {
+
             AddChild(winScreen);
 
-            if (Input.GetKeyDown(Key.FIVE))
+            if (Input.GetKeyDown(Key.ENTER))
             {
-                Console.WriteLine("You want to quit the game!");
+            Console.WriteLine("You want to quit the game!");
                 Destroy();
 
             }
-        }
+     
+            
+        
 
 
     }
