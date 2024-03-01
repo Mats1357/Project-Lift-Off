@@ -85,5 +85,7 @@
     <Compile Include="Note.cs" />
     <Compile Include="ScoreSystem.cs" />
     <Compile Include="GameOver.cs" />
+    <Compile Include="RemoveCustomer.cs" />
+    <Compile Include="WinScreen.cs" />
   </ItemGroup>
 </Project>

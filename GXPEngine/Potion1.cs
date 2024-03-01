@@ -5,12 +5,16 @@ public class Potion1 : Sprite {
 
 	private Note noteP1;
 	MyGame game;
+	EasyCustomer easyCustomer;
+	//RemoveCustomer remove_customer;
 
-	public Potion1(Note n, MyGame g) : base("one.png")
+	Sound sound = new Sound("sounds/Leaves.mp3", false, false);
+
+	public Potion1(Note n, MyGame g, EasyCustomer ec) : base("note_border.png")
 	{
 		noteP1 = n;
 		game = g;
-
+		easyCustomer = ec;
 	}
 
 	void Update()
@@ -22,8 +26,10 @@ public class Potion1 : Sprite {
 
 			if (HitTest(noteP1))
 			{
-				SetColor(255, 0, 0);
+				sound.Play();
 				noteP1.Delete();
+				easyCustomer.P1Done = true;
+
 			}
 
 			else
